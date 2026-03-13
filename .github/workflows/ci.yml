@@ -27,16 +27,12 @@ jobs:
           libglu1-mesa-dev \
           zlib1g-dev
     
-    - name: Configure with Camake
+    - name: Run qmake6
       run: |
-        mkdir -p build
-        cd build
-        cmake ..
-      continue-on-error: true
+        q6make6 sbrowser.pro
     
     - name: Build project
       run: |
-        cd build
         make -j$(nproc)
     
     - name: Upload build artifacts
@@ -44,5 +40,6 @@ jobs:
       if: success()
       with:
         name: SBrowser-build
-        path: build/
+        path: 
+        - SBrowserCppWebEngine/
         retention-days: 7
