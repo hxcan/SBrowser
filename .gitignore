@@ -1,41 +1,72 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
+# Qt 构建产物
+build-*-Qt*-Debug/
+build-*-Qt*-Release/
 *.o
-*.obj
+Makefile
+*.pro.user
+moc_*.cpp
+*.qmake.stash
+*.qbs
 
-# Precompiled Headers
-*.gch
-*.pch
+# Qt 二进制/翻译文件
+*.qm
+*sbrowser*
 
-# Linker files
-*.ilk
+# IDE 缓存
+.project
+.buildpath
+.exzignore
+*.swp
+*~
+.*.swp
+.orig
 
-# Debugger Files
-*.pdb
+# 构建目录
+build/
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# 本地临时文件
+repFile/
+*.log
+ld.so.conf.d/
 
-# Fortran module files
-*.mod
-*.smod
+# 压缩/备份文件
+*.exz
+*.zip
+*.tar.gz
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# Protobuf 生成的 C++ 头文件
+*.pb.h
 
-# Executables
-*.exe
-*.out
-*.app
+# macOS 临时文件
+.DS_Store
 
-# debug information files
-*.dwo
+# qdarkstyle 样式资源 (仅保留核心配置，忽略图片)
+*/qdarkstyle/rc/*
+*/DarkMode.css
+*/NormalMode.css
+
+# simageview 图片资源
+*/simageview/Images/*
+**/Images/*
+
+# Linux desktop 描述符
+*.desktop
+
+# proto_files 目录
+*/proto_files/
+
+# builtin 数据资源
+*/builtin.data.sound/
+
+# Scripts 目录
+*/Scripts/
+
+# protobuf pri 文件（如不需要可忽略）
+*/protobuf.pri
+
+# 第三方库 C 源码
+ThirdpartyWindows/libqrencode-4.0.0/*.c
+
+# 额外清理
+SbMessageDefinitions.pro.user.*
+SBrowserCppWebEngine.pro.user.*
