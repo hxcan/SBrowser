@@ -29,7 +29,7 @@ jobs:
     
     - name: Run qmake6
       run: |
-        q6make6 sbrowser.pro
+        qmake6 sbrowser.pro
     
     - name: Build project
       run: |
@@ -40,6 +40,5 @@ jobs:
       if: success()
       with:
         name: SBrowser-build
-        path: 
-        - SBrowserCppWebEngine/
+        path: SBrowserCppWebEngine/
         retention-days: 7
