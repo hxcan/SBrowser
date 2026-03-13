@@ -21,7 +21,7 @@ jobs:
           qt6-base-dev \
           qt6-webengine-dev \
           qt6-webchannel-dev \
-          libut6webview6-dev \
+          libqt6webview6-dev \
           qt6-svg-dev \
           qt6-remoteobjects-dev \
           cmake \
