@@ -23,14 +23,17 @@ jobs:
           qt6-webchannel-dev \
           qt6-svg-dev \
           qt6-remoteobjects-dev \
-          qt6-location-dev \
-          qt6-core5compat-dev \
           cmake \
           g++ \
           make \
           protobuf-compiler \
           libprotobuf-dev \
-          libqrencode-dev
+          libqrencode-dev \
+          qt6-toolings-dev \
+          libgtl2-dev \
+          libdl-dev \
+          libpng-dev \
+          zlib1g-dev
     
     - name: Configure with Cmake
       run: |
