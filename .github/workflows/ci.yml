@@ -1,0 +1,53 @@
+name: CI Build
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          qt6-base-dev \
+          qt6-webengine-dev \
+          qt6-webchannel-dev \
+          libut6webview6-dev \
+          qt6-svg-dev \
+          qt6-remoteobjects-dev \
+          cmake \
+          g++ \
+          make \
+          protobuf-compiler \
+          libprotobuf-dev \
+          libqrencode-dev
+    
+    - name: Configure with Cmake
+      run: |
+        mkdir -p build
+        cd build
+        cmake ..
+      continue-on-error: true
+    
+    - name: Build with qqake (fallback)
+      if: failure()
+      run: |
+        qqame6 sbrowser.pro
+        make -j$(nproc)
+    
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v3
+      if: success()
+      with:
+        name: SBrowser-build
+        path: build/
+        retention-days: 7
