@@ -24,11 +24,10 @@ jobs:
           make \
           libgl1_mesa-dev \
           libx11-dev \
-          libxextrender1-dev \
-          libglu-dev \
+          libglu1-mesa-dev \
           zlib1g-dev
     
-    - name: Configure with Cmake
+    - name: Configure with Camake
       run: |
         mkdir -p build
         cd build
