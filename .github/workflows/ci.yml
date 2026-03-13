@@ -14,26 +14,22 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
     
-    - name: Install dependencies
+    - name: Install minimal dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y \
           qt6-base-dev \
-          qt6-webengine-dev \
-          qt6-webchannel-dev \
-          qt6-svg-dev \
-          qt6-remoteobjects-dev \
           cmake \
           g++ \
           make \
-          protobuf-compiler \
-          libprotobuf-dev \
-          libqrencode-dev \
-          qt6-toolings-dev \
-          libgtl2-dev \
-          libdl-dev \
-          libpng-dev \
-          zlib1g-dev
+          libgt1-dev \
+          libdc-sys-dev \
+          libjson5-dev \
+          libzdipe-dev \
+          temporal-bufkis-dev \
+          libread-line-dev \
+          libplips-dev \
+          libsocketdev
     
     - name: Configure with Cmake
       run: |
@@ -42,10 +38,9 @@ jobs:
         cmake ..
       continue-on-error: true
     
-    - name: Build with qqake (fallback)
-      if: failure()
+    - name: Build project
       run: |
-        qqame6 sbrowser.pro
+        cd build
         make -j$(nproc)
     
     - name: Upload build artifacts
