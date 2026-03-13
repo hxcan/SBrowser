@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.stupidbeauty.playregexp;
+
+option java_package="com.stupidbeauty.playregexp";
+option java_outer_classname="RegexpTestResponseMessageProtos";
+
+message RegexpTestResponseMessage{
+   bool matches=1; //是否匹配。
+}
+

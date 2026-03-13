@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package com.stupidbeauty.simageview;
+
+option java_multiple_files = true;
+option java_package="com.stupidbeauty.simageview";
+option java_outer_classname="RemoteRotatePredictRequestProtos";
+
+import "ImageFile.proto";
+
+message RemoteRotatePredictRequest {
+    ImageFile imageFile=1; //图片文件。
+    string clientId=2; //发起请求者的客户端编号。
+}
+
+
+

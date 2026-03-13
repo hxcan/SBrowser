@@ -1,0 +1,14 @@
+
+syntax = "proto3";
+
+package com.stupidbeauty.simageview;
+
+import "CommonTypes.proto";
+
+option java_multiple_files = true;
+option java_package="com.stupidbeauty.simageview";
+option java_outer_classname="CollectImageFileProtos";
+
+service CollectImageFile {
+    rpc collectImageFile (CollectImageFileReq) returns (CollectImageFileReply) {}
+}

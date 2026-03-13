@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package com.stupidbeauty.simageview;
+
+option java_multiple_files = true;
+option java_package="com.stupidbeauty.simageview";
+option java_outer_classname="CommonTypesProtos";
+
+import "ImageFile.proto";
+
+message CollectImageFileReq {
+    ImageFile imageFile=1; //图片文件。
+}
+
+message CollectImageFileReply {
+    ReplyHeader header=1; //返回结果头部。
+}
+
+message ReplyHeader {
+    int32 ret=1; // 调用结果返回码, 0-成功 其他-失败,发生错误
+    string errMsg=2; // 调用结果说明, OK-成功
+}
+
+message NodeInfoReq {
+}
+
+message NodeInfoReply {
+    string serverUid=1; // server uuid 字符串
+    string version=2; // 服务器程序版本
+}

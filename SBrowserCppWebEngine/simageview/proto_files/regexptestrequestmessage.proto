@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+
+package com.stupidbeauty.playregexp;
+
+option java_package="com.stupidbeauty.playregexp";
+option java_outer_classname="RegexpTestRequestMessageProtos";
+
+message RegexpTestRequestMessage{
+string regExp=1; //正则表达式。
+string testString=2; //测试字符串。
+string clientId=3; //发起请求的客户端编号。
+}
+

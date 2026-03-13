@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package com.stupidbeauty.simageview;
+
+option java_multiple_files = true;
+option java_package="com.stupidbeauty.simageview";
+option java_outer_classname="ImageFileProtos";
+
+message ImageFile{
+    int32 rotate_degree=1; //旋转角度。
+    bytes file_content=2; //文件内容。
+    string fileName=3; //文件名。
+}
+
