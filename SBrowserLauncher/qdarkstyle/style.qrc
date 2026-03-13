@@ -1,0 +1,4 @@
+<RCC>
+    <qresource prefix="/qss_icons"/>
+    <qresource prefix="/qdarkstyle"/>
+</RCC>

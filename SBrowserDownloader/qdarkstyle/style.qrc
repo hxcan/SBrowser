@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/qss_icons">
+        <file>rc/Vsepartoolbar.png</file>
+    </qresource>
+    <qresource prefix="/qdarkstyle"/>
+</RCC>

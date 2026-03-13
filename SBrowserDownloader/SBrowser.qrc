@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/StupidBeauty.png</file>
+        <file>Images/download.png</file>
+        <file>Images/StupidBeauty.1.png</file>
+        <file>Images/stupid.png</file>
+        <file>Images/stu.png</file>
+        <file>Images/s.png</file>
+        <file>Images/s.1.png</file>
+        <file>Images/s.2.png</file>
+        <file>Images/s.3.png</file>
+        <file>Images/s.4.png</file>
+        <file>Images/s.5.png</file>
+        <file>Images/stupidbeauty.32.png</file>
+        <file>Images/stupidbeauty.50.32.png</file>
+        <file>Images/stupidbeauty.80.32.png</file>
+        <file>Images/2113711.png</file>
+        <file>Images/icon.png</file>
+        <file>Images/icon 1.1.png</file>
+        <file>DarkMode.css</file>
+        <file>NormalMode.css</file>
+        <file>Images/twitter-logo_22.258.png</file>
+        <file>SBrowser_zh_CN.qm</file>
+        <file>SBrowser_ru.qm</file>
+        <file>Images/sign_up.png</file>
+        <file>SBrowser_zh_TW.qm</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TabManager</class>
+ <widget class="QDialog" name="TabManager">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1144</width>
+    <height>654</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>QtDocChinese</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="text">
+          <string>Title or URL:</string>
+         </property>
+         <property name="buddy">
+          <cstring>searchlineEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="searchlineEdit">
+         <property name="placeholderText">
+          <string>QStateMachine</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="searchpushButton">
+         <property name="text">
+          <string>Search</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="resetpushButton_2">
+         <property name="text">
+          <string>Reset</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="copyListpushButton">
+         <property name="text">
+          <string>Copy list</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QListWidget" name="articlelistWidget">
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="verticalScrollMode">
+        <enum>QAbstractItemView::ScrollPerPixel</enum>
+       </property>
+       <property name="spacing">
+        <number>12</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+  <action name="action_Quit">
+   <property name="text">
+    <string>&amp;Account balance</string>
+   </property>
+  </action>
+  <action name="action_WLAN_name_password">
+   <property name="text">
+    <string>&amp;WLAN name &amp; password</string>
+   </property>
+  </action>
+  <action name="actionA_bout">
+   <property name="text">
+    <string>A&amp;bout</string>
+   </property>
+  </action>
+  <action name="action_Reconnect_network">
+   <property name="text">
+    <string>&amp;Reconnect network</string>
+   </property>
+  </action>
+  <action name="action_System_maintainance_mode">
+   <property name="text">
+    <string>&amp;System maintainance mode</string>
+   </property>
+  </action>
+  <action name="action_Traditional_Chinese">
+   <property name="text">
+    <string>&amp;Traditional Chinese</string>
+   </property>
+  </action>
+  <action name="actionS_implified_Chinese">
+   <property name="text">
+    <string>S&amp;implified Chinese</string>
+   </property>
+  </action>
+  <action name="actionE_nglish">
+   <property name="text">
+    <string>E&amp;nglish</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>articlelistWidget</sender>
+   <signal>itemActivated(QListWidgetItem*)</signal>
+   <receiver>TabManager</receiver>
+   <slot>showArticle(QListWidgetItem*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>204</x>
+     <y>282</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-4</x>
+     <y>186</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>resetpushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>TabManager</receiver>
+   <slot>resetSearch()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1045</x>
+     <y>26</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>600</x>
+     <y>35</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>searchlineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>TabManager</receiver>
+   <slot>searchArticle(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>606</x>
+     <y>15</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>796</x>
+     <y>45</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>copyListpushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>TabManager</receiver>
+   <slot>copyList()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>1087</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1142</x>
+     <y>70</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>copyList()</slot>
+  <slot>toggleSelfTest(bool)</slot>
+  <slot>testFromNumber()</slot>
+  <slot>testStringArray()</slot>
+  <slot>requestConfirmDp()</slot>
+  <slot>notifyPpp0AlreadyUp()</slot>
+  <slot>userRequestStartVsim()</slot>
+  <slot>updateProgressValue(int)</slot>
+  <slot>stopOsi()</slot>
+  <slot>showArticle(QListWidgetItem*)</slot>
+  <slot>searchArticle(QString)</slot>
+  <slot>resetSearch()</slot>
+ </slots>
+</ui>

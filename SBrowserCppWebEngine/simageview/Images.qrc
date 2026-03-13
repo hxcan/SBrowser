@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/Watermark.png</file>
+        <file>Images/Tray.png</file>
+        <file>Images/simageview.png</file>
+        <file>XyRunner.qm</file>
+        <file>Images/privacy-policy.jpg</file>
+    </qresource>
+</RCC>

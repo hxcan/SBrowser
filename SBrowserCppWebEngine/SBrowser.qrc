@@ -1,0 +1,44 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Images/StupidBeauty.png</file>
+        <file>Images/download.png</file>
+        <file>Images/StupidBeauty.1.png</file>
+        <file>Images/stupid.png</file>
+        <file>Images/stu.png</file>
+        <file>Images/s.png</file>
+        <file>Images/s.1.png</file>
+        <file>Images/s.2.png</file>
+        <file>Images/s.3.png</file>
+        <file>Images/s.4.png</file>
+        <file>Images/s.5.png</file>
+        <file>Images/stupidbeauty.32.png</file>
+        <file>Images/stupidbeauty.50.32.png</file>
+        <file>Images/stupidbeauty.80.32.png</file>
+        <file>Images/2113711.png</file>
+        <file>Images/icon.png</file>
+        <file>Images/icon 1.1.png</file>
+        <file>DarkMode.css</file>
+        <file>NormalMode.css</file>
+        <file>Images/twitter-logo_22.258.png</file>
+        <file>SBrowser_zh_CN.qm</file>
+        <file>SBrowser_ru.qm</file>
+        <file>Images/sign_up.png</file>
+        <file>Scripts/clientHeight.js</file>
+        <file>Scripts/scrollTop.js</file>
+        <file>SBrowser_zh_TW.qm</file>
+        <file>Scripts/removeBlm.zzaqwz.dll.sh.js</file>
+        <file>Scripts/removeAdsByGoogle.zzaqvi.dll.sh.js</file>
+        <file>Scripts/removeAndroidBlackRacialEquality.js</file>
+        <file>Scripts/removeAdsByBAidu.zzaqvi.dll.sh.js</file>
+        <file>Scripts/removeAdsByNasa.js</file>
+        <file>Scripts/removeHeaderByCloudTechnologyExperts.js</file>
+        <file>Images/sbrowser.png</file>
+        <file>Scripts/extractImageUrls.i.js</file>
+        <file>Scripts/extractMediaUrls.i.js</file>
+        <file>Scripts/pauseMedium.i.js</file>
+        <file>builtin.data.sound/builtin.ad.block.urls.i.json</file>
+        <file>Images/20070612182331.jpg</file>
+        <file>Scripts/handleBlobDownload.i.js</file>
+        <file>Scripts/qwebchannel.js</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SBrowserCppWebEngine</class>
+ <widget class="QMainWindow" name="SBrowserCppWebEngine">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>StupidBeauty Browser with WebEngine</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="SBrowser.qrc">
+    <normaloff>:/Images/sbrowser.png</normaloff>:/Images/sbrowser.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="pgstabWidget">
+      <property name="usesScrollButtons">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">padding: 0px;
+margin: 0px;</string>
+   </property>
+   <widget class="QMenu" name="menu_File">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_Quit"/>
+    <addaction name="action_Batch_open"/>
+   </widget>
+   <widget class="QMenu" name="menu_Setting">
+    <property name="title">
+     <string>&amp;Setting</string>
+    </property>
+    <addaction name="actionSetting"/>
+   </widget>
+   <widget class="QMenu" name="menu_Tool">
+    <property name="title">
+     <string>&amp;Tool</string>
+    </property>
+    <addaction name="actionF_ind"/>
+    <addaction name="actionFind_next"/>
+    <addaction name="actionFind_previous"/> <!-- 新增这行 -->
+    <addaction name="action_Download_manager"/>
+    <addaction name="actionS_ave_as_Image"/>
+    <addaction name="actionD_ownload_current_url"/>
+    <addaction name="actionDo_wnload_all_links"/>
+    <addaction name="actionExport_as_PDF"/>
+    <addaction name="actionI_nspect"/>
+    <addaction name="actionFocus_address_bar"/>
+    <addaction name="action_Generate_QR_code"/>
+    <addaction name="actionOpen_with_system_browser"/>
+    <addaction name="actionDownload_all_images"/>
+    <addaction name="actionDownload_all_medium"/>
+    <addaction name="actionApply_WebChannel"/>
+   </widget>
+   <widget class="QMenu" name="menu_Edit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionSe_lect_all"/>
+    <addaction name="actionPaste"/>
+   </widget>
+   <widget class="QMenu" name="menu_Help">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionS_Browser"/>
+   </widget>
+   <widget class="QMenu" name="menu_New_version">
+    <property name="title">
+     <string>&lt;-- &amp;New version</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_View">
+    <property name="title">
+     <string>&amp;View</string>
+    </property>
+    <widget class="QMenu" name="menuScale">
+     <property name="title">
+      <string>S&amp;cale</string>
+     </property>
+     <addaction name="actionZoom_in"/>
+     <addaction name="actionZoom_out"/>
+     <addaction name="actionRestore"/>
+     <addaction name="action1x"/>
+    </widget>
+    <addaction name="action_Menu_bar"/>
+    <addaction name="actionTab_bar"/>
+    <addaction name="actionNavigation_bar"/>
+    <addaction name="actionStatus_bar"/>
+    <addaction name="actionDark_mode"/>
+    <addaction name="actionRefresh"/>
+    <addaction name="actionSt_op_gif_animation"/>
+    <addaction name="actionT_ab_list"/>
+    <addaction name="menuScale"/>
+    <addaction name="actionTab_on_right_side"/>
+    <addaction name="actionTab_on_left_side"/>
+   </widget>
+   <addaction name="menu_File"/>
+   <addaction name="menu_Setting"/>
+   <addaction name="menu_Tool"/>
+   <addaction name="menu_Edit"/>
+   <addaction name="menu_Help"/>
+   <addaction name="menu_New_version"/>
+   <addaction name="menu_View"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="action_Quit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionSetting">
+   <property name="text">
+    <string>&amp;Setting</string>
+   </property>
+  </action>
+  <action name="actionF_ind">
+   <property name="text">
+    <string>F&amp;ind</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="action_Download_manager">
+   <property name="text">
+    <string>&amp;Download manager</string>
+   </property>
+  </action>
+  <action name="actionSe_lect_all">
+   <property name="text">
+    <string>Se&amp;lect all</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionS_Browser">
+   <property name="text">
+    <string>S&amp;Browser</string>
+   </property>
+  </action>
+  <action name="actionS_ave_as_Image">
+   <property name="text">
+    <string>S&amp;ave as Image</string>
+   </property>
+  </action>
+  <action name="action_Menu_bar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Menu bar</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+M</string>
+   </property>
+  </action>
+  <action name="actionTab_bar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Tab bar</string>
+   </property>
+  </action>
+  <action name="actionNavigation_bar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Navigation bar</string>
+   </property>
+  </action>
+  <action name="actionStatus_bar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Status bar</string>
+   </property>
+  </action>
+  <action name="actionDark_mode">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>&amp;Dark mode</string>
+   </property>
+  </action>
+  <action name="action_Batch_open">
+   <property name="text">
+    <string>&amp;Batch open</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="text">
+    <string>&amp;Refresh</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
+   </property>
+  </action>
+  <action name="actionSt_op_gif_animation">
+   <property name="text">
+    <string>St&amp;op gif animation</string>
+   </property>
+  </action>
+  <action name="actionA">
+   <property name="text">
+    <string>a</string>
+   </property>
+  </action>
+  <action name="actionT_ab_list">
+   <property name="text">
+    <string>T&amp;ab list</string>
+   </property>
+  </action>
+  <action name="actionD_ownload_current_url">
+   <property name="text">
+    <string>D&amp;ownload current url</string>
+   </property>
+  </action>
+  <action name="actionZoom_in">
+   <property name="text">
+    <string>&amp;Zoom in</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="actionZoom_out">
+   <property name="text">
+    <string>Zoom &amp;out</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="actionRestore">
+   <property name="text">
+    <string>&amp;Restore</string>
+   </property>
+  </action>
+  <action name="action1x">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>&amp;1x</string>
+   </property>
+  </action>
+  <action name="actionDo_wnload_all_links">
+   <property name="text">
+    <string>Do&amp;wnload all links</string>
+   </property>
+  </action>
+  <action name="actionExport_as_PDF">
+   <property name="text">
+    <string>&amp;Export as PDF</string>
+   </property>
+  </action>
+  <action name="actionI_nspect">
+   <property name="text">
+    <string>I&amp;nspect</string>
+   </property>
+  </action>
+  <action name="actionFocus_address_bar">
+   <property name="text">
+    <string>&amp;Focus address bar</string>
+   </property>
+   <property name="shortcut">
+    <string>F6</string>
+   </property>
+  </action>
+  <action name="action_Generate_QR_code">
+   <property name="text">
+    <string>&amp;Generate QR code</string>
+   </property>
+  </action>
+  <action name="actionPaste">
+   <property name="text">
+    <string>Paste</string>
+   </property>
+  </action>
+  <action name="actionFind_next">
+   <property name="text">
+    <string>Find next</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+<action name="actionFind_previous">
+    <property name="text">
+        <string>Find previous</string>
+    </property>
+    <property name="shortcut">
+        <string>Shift+F3</string>
+    </property>
+</action>
+  <action name="actionOpen_with_system_browser">
+   <property name="text">
+    <string>Open with system browser</string>
+   </property>
+  </action>
+  <action name="actionDownload_all_images">
+   <property name="text">
+    <string>Down&amp;load all images</string>
+   </property>
+  </action>
+  <action name="actionDownload_all_medium">
+   <property name="text">
+    <string>Download all &amp;medium</string>
+   </property>
+  </action>
+  <action name="actionTab_on_right_side">
+   <property name="text">
+    <string>Tab on right side</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Right</string>
+   </property>
+  </action>
+  <action name="actionTab_on_left_side">
+   <property name="text">
+    <string>Tab on left side</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Left</string>
+   </property>
+  </action>
+  <action name="actionApply_WebChannel">
+   <property name="text">
+    <string>Apply WebChannel</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="1" margin="1"/>
+ <resources>
+  <include location="SBrowser.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>action_Quit</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSetting</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>showSettingDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Quit</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>closeSettingDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionF_ind</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>showFindDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+<connection>
+    <sender>actionFind_previous</sender>
+    <signal>triggered()</signal>
+    <receiver>SBrowserCppWebEngine</receiver>
+    <slot>findTextPrevious()</slot>
+</connection>
+  <connection>
+   <sender>action_Download_manager</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>showDownloadManager()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSe_lect_all</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionS_Browser</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>showAboutDialog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Quit</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>quit()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Menu_bar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>toggleMenuBarVisable(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTab_bar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>toggleTabBarVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNavigation_bar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>toggleNavigationBarVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionStatus_bar</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>toggleStatusBarVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDark_mode</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>toggleDarkMode(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Batch_open</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>batchOpenUrls()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRefresh</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>refresh()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionT_ab_list</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>showTabsManager()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionD_ownload_current_url</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>downloadCurrentUrl()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZoom_in</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>zoomIn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionZoom_out</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>zoomOut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRestore</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>zoomRestore()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionExport_as_PDF</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>exportAsPdf()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionI_nspect</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>inspect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFocus_address_bar</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>focusAddressBar()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_Generate_QR_code</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>generateQrCode()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPaste</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>paste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFind_next</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>findText()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpen_with_system_browser</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>openWithSystemBrowser()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDownload_all_images</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>downloadAllImages()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDownload_all_medium</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>downloadAllMedium()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTab_on_right_side</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>showTabOnRightSide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionTab_on_left_side</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>showTabOnLeftSide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionApply_WebChannel</sender>
+   <signal>triggered()</signal>
+   <receiver>SBrowserCppWebEngine</receiver>
+   <slot>applyWebChannel()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>showSettingDialog()</slot>
+  <slot>closeSettingDialog()</slot>
+  <slot>showFindDialog()</slot>
+  <slot>showDownloadManager()</slot>
+  <slot>closeDownloadManager()</slot>
+  <slot>selectAll()</slot>
+  <slot>showAboutDialog()</slot>
+  <slot>quit()</slot>
+  <slot>saveAsImage()</slot>
+  <slot>toggleMenuBarVisable(bool)</slot>
+  <slot>toggleTabBarVisible(bool)</slot>
+  <slot>toggleNavigationBarVisible(bool)</slot>
+  <slot>toggleStatusBarVisible(bool)</slot>
+  <slot>toggleDarkMode(bool)</slot>
+  <slot>batchOpenUrls()</slot>
+  <slot>refresh()</slot>
+  <slot>stopGifAnimation()</slot>
+  <slot>showTabsManager()</slot>
+  <slot>downloadCurrentUrl()</slot>
+  <slot>zoomIn()</slot>
+  <slot>zoomOut()</slot>
+  <slot>zoomRestore()</slot>
+  <slot>downloadAllLinks()</slot>
+  <slot>exportAsPdf()</slot>
+  <slot>inspect()</slot>
+  <slot>focusAddressBar()</slot>
+  <slot>generateQrCode()</slot>
+  <slot>paste()</slot>
+  <slot>findText()</slot>
+<slot>findTextPrevious()</slot>
+  <slot>openWithSystemBrowser()</slot>
+  <slot>downloadAllImages()</slot>
+  <slot>downloadAllMedium()</slot>
+  <slot>showTabOnRightSide()</slot>
+  <slot>showTabOnLeftSide()</slot>
+  <slot>applyWebChannel()</slot>
+ </slots>
+</ui>

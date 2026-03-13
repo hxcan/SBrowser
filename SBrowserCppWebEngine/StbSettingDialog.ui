@@ -1,0 +1,826 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>StbSettingDialog</class>
+ <widget class="QDialog" name="StbSettingDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>874</width>
+    <height>671</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Settings</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="stngtabWidget">
+     <property name="currentIndex">
+      <number>3</number>
+     </property>
+     <widget class="QWidget" name="prxytab">
+      <attribute name="title">
+       <string>Smart Proxy</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QGroupBox" name="smtPrxygroupBox">
+         <property name="title">
+          <string>Use S&amp;mart Proxy</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="allUseProxyhorizontalLayout_5">
+            <item>
+             <widget class="QCheckBox" name="allUseProxycheckBox">
+              <property name="text">
+               <string>Use proxy for all hosts</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="autoAddRulecheckBox">
+              <property name="text">
+               <string>Auto add rule</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="useProxyForDnscheckBox">
+              <property name="text">
+               <string>Dns via proxy</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Socks proxy port:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="smtPrxyPrtspinBox">
+              <property name="minimum">
+               <number>1025</number>
+              </property>
+              <property name="maximum">
+               <number>65535</number>
+              </property>
+              <property name="value">
+               <number>9090</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Http proxy port:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="httpProxyPortspinBox">
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>65535</number>
+              </property>
+              <property name="value">
+               <number>8118</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string>Proxy host:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="smartProxyHostlineEdit">
+              <property name="text">
+               <string>127.0.0.1</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="additionalProxiesgroupBox_4">
+         <property name="title">
+          <string>Additional proxies</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_12">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_11">
+            <item>
+             <widget class="QPushButton" name="addAdditionalProxypushButton_5">
+              <property name="text">
+               <string>Add</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="removeAdditionalProxypushButton_6">
+              <property name="text">
+               <string>Remove</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QListWidget" name="additionalProxieslistWidget_2"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>Websites to use proxy</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QListWidget" name="prxyWbLstlistWidget"/>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QPushButton" name="addWbstpushButton">
+              <property name="text">
+               <string>Add(&amp;A)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="deleteProxyWebsitepushButton_2">
+              <property name="text">
+               <string>Delete</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="adBlocktab">
+      <attribute name="title">
+       <string>Ad block</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_5">
+       <item>
+        <widget class="QCheckBox" name="enableAdBlockcheckBox">
+         <property name="text">
+          <string>Enable ad block</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>Urls regexp to block</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_6">
+          <item>
+           <widget class="QListWidget" name="adBlockUrllistWidget"/>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QPushButton" name="pushButton">
+              <property name="text">
+               <string>Add</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="pushButton_2">
+              <property name="text">
+               <string>Delete</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="ttstab">
+      <attribute name="title">
+       <string>TTS server</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <widget class="QGroupBox" name="groupBox_3">
+         <property name="title">
+          <string>Addresses</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_9">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>&amp;Main address:</string>
+              </property>
+              <property name="buddy">
+               <cstring>ttsServerAddresslineEdit</cstring>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="ttsServerAddresslineEdit">
+              <property name="text">
+               <string>192.168.2.113</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="addCandidateTtsServerIppushButton_3">
+              <property name="text">
+               <string>&amp;Add to candidates</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>&amp;Candidates:</string>
+              </property>
+              <property name="buddy">
+               <cstring>listWidget</cstring>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QListWidget" name="listWidget"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_4">
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Port:</string>
+           </property>
+           <property name="buddy">
+            <cstring>ttsServerPortspinBox</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="ttsServerPortspinBox">
+           <property name="minimum">
+            <number>1025</number>
+           </property>
+           <property name="maximum">
+            <number>65535</number>
+           </property>
+           <property name="value">
+            <number>11245</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="contenttab">
+      <attribute name="title">
+       <string>Content</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_11">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string>Index page:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="indexPagelineEdit">
+           <property name="placeholderText">
+            <string>For example: http://stupidbeauty.com</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="searchEnginehorizontalLayout_10">
+         <item>
+          <widget class="QLabel" name="searchEnginelabel_9">
+           <property name="text">
+            <string>Search engine:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="searchEnginecomboBox_2">
+           <item>
+            <property name="text">
+             <string>Google</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Duckduckgo</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_13">
+         <item>
+          <widget class="QLabel" name="downloadDirectoryPromptlabel_10">
+           <property name="text">
+            <string>Download directory:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="downloadDirectorylineEdit"/>
+         </item>
+         <item>
+          <widget class="QPushButton" name="browseDownloadDiretorypushButton_5">
+           <property name="text">
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="text">
+          <string>&amp;Clear disk cache</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="advancedtab">
+      <attribute name="title">
+       <string>Advanced</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QCheckBox" name="enableWebglcheckBox">
+         <property name="text">
+          <string>Enable webgl</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="pluginsEnabledcheckBox">
+         <property name="text">
+          <string>&amp;Enable plugins</string>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="enableJavascriptcheckBox">
+         <property name="text">
+          <string>Enable javascript</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="lowMemoryQuitcheckBox">
+         <property name="text">
+          <string>Quit when memory is low</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="quitIdle10MinutesBox">
+         <property name="text">
+          <string>Quit when idle for 10 minutes</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="pauseMediaWhenLostFocusBox">
+         <property name="text">
+          <string>Pause media when lost focus</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QLabel" name="label_9">
+           <property name="text">
+            <string>User agent:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="userAgentlineEdit"/>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="downloadergroupBox_4">
+         <property name="title">
+          <string>Downloader</string>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_12">
+          <item>
+           <widget class="QRadioButton" name="builtinDownloaderradioButton">
+            <property name="text">
+             <string>Builtin downloader</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="superDownloaderradioButton_2">
+            <property name="text">
+             <string>Super downloader</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="uitab">
+      <attribute name="title">
+       <string>User interface</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_10">
+       <item>
+        <widget class="QGroupBox" name="manualSelectUiLanguagegroupBox_4">
+         <property name="title">
+          <string>&amp;Manually select user interface language</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_8">
+          <item>
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>User interface language:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_3">
+            <property name="text">
+             <string>Set</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox"/>
+          </item>
+          <item>
+           <widget class="QComboBox" name="uiLanguagecomboBox">
+            <item>
+             <property name="text">
+              <string>Simplified Chinese [zh_CN]</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Russian [ru]</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="userScripttab">
+      <attribute name="title">
+       <string>User script</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_13">
+       <item>
+        <layout class="QHBoxLayout" name="userScripthorizontalLayout_13">
+         <item>
+          <widget class="QListView" name="userScriptlistView"/>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="userScriptOperationverticalLayout_14">
+           <item>
+            <widget class="QPushButton" name="addUserScriptpushButton_5">
+             <property name="text">
+              <string>Add</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QTextBrowser" name="userScripttextBrowser"/>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="1" margin="1"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>254</x>
+     <y>661</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>322</x>
+     <y>661</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addWbstpushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>addNeedProxyWebsite()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>256</x>
+     <y>602</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>15</x>
+     <y>395</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>addAdBlockUrl()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>602</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>83</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>deleteProxyWebsitepushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>deleteNeedProxyWebsite()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>840</x>
+     <y>603</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>376</x>
+     <y>1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>allUseProxycheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>toggleAutoAddEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>101</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>873</x>
+     <y>22</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_2</sender>
+   <signal>clicked()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>deleteAdblockRule()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>840</x>
+     <y>603</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>673</x>
+     <y>551</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addCandidateTtsServerIppushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>addCandidateTtsServerIp()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>840</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>871</x>
+     <y>96</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>testSelectIndex()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>433</x>
+     <y>355</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>870</x>
+     <y>430</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>clearDiskCache()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>443</x>
+     <y>611</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>585</x>
+     <y>551</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>addAdditionalProxypushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>addAdditionalProxy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>273</x>
+     <y>239</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>870</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>browseDownloadDiretorypushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>StbSettingDialog</receiver>
+   <slot>browseDownloadDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>496</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>869</x>
+     <y>477</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>addNeedProxyWebsite()</slot>
+  <slot>addAdBlockUrl()</slot>
+  <slot>deleteNeedProxyWebsite()</slot>
+  <slot>toggleAutoAddEnabled(bool)</slot>
+  <slot>deleteAdblockRule()</slot>
+  <slot>addCandidateTtsServerIp()</slot>
+  <slot>testSelectIndex()</slot>
+  <slot>clearDiskCache()</slot>
+  <slot>addAdditionalProxy()</slot>
+  <slot>browseDownloadDirectory()</slot>
+ </slots>
+</ui>

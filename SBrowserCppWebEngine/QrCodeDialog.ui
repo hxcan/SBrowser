@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QrCodeDialog</class>
+ <widget class="QDialog" name="QrCodeDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>314</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Qr code</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="imagefileNamelabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>image file name</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="qrlabel">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Qr code</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="foregroundTransparentchangeForegraoundColorpushButton">
+         <property name="text">
+          <string>&amp;Foreground transparent</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="regeneratepushButton">
+         <property name="text">
+          <string>&amp;Regenerate</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="showBackgroundImagepushButton">
+         <property name="text">
+          <string>&amp;Show background image</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="exportQrcodeImagepushButton">
+         <property name="text">
+          <string>&amp;Export qrcode image</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>Settings</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="QCheckBox" name="showGridcheckBox">
+          <property name="text">
+           <string>Show grid</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>QrCodeDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>252</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>QrCodeDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>295</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>regeneratepushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>QrCodeDialog</receiver>
+   <slot>regenerate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>194</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>209</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>foregroundTransparentchangeForegraoundColorpushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>QrCodeDialog</receiver>
+   <slot>toggleForegroundTransparent()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>161</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>396</x>
+     <y>164</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showBackgroundImagepushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>QrCodeDialog</receiver>
+   <slot>showBackgroundImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>227</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>111</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>exportQrcodeImagepushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>QrCodeDialog</receiver>
+   <slot>exportQrcodeImage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>196</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>showGridcheckBox</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>QrCodeDialog</receiver>
+   <slot>toggleGrid(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>142</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>3</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>regenerate()</slot>
+  <slot>toggleForegroundTransparent()</slot>
+  <slot>showBackgroundImage()</slot>
+  <slot>exportQrcodeImage()</slot>
+  <slot>toggleGrid(bool)</slot>
+ </slots>
+</ui>
