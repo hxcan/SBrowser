@@ -1,0 +1,15 @@
+class SetDirectionService 
+{
+    PROP(QString direction);
+    SLOT(addDownloadTask(const QString & requestUrl, bool requestFileName));
+    SLOT(showDownloadManager());
+    SLOT(syncSetting()); //!<Sync setting.
+    SLOT(quit()); //!< 退出。陈欣
+
+// 新增：通过二进制数据下载
+//SLOT(addDownloadTaskFromDataBase64(const QString & base64Data, const QString &suggestedFilename));
+
+SLOT(addDownloadTaskFromData(const QByteArray &data, const QString &suggestedFilename));
+
+
+};
