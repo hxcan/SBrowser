@@ -22,7 +22,7 @@ jobs:
           cmake \
           g++ \
           make \
-          libgl1_mesa-dev \
+          libgl1-mesa-dev \
           libx11-dev \
           libglu1-mesa-dev \
           zlib1g-dev
