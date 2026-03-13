@@ -33,6 +33,12 @@ jobs:
           protobuf-compiler \
           libprotobuf-dev
     
+    - name: Generate Protobuf code
+      run: |
+        echo "=== Generating Protobuf code ==="
+        find . -name "*.proto" -type f -exec protoc {} --cpp_out={}.cbc --cpp_out={}.h -I. \;
+        echo "=== Protobuf code generation complete ==="
+    
     - name: Run qmake6
       run: |
         qmake6 sbrowser.pro
