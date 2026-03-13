@@ -14,7 +14,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
     
-    - name: Install minimal dependencies
+    - name: Install dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y \
@@ -22,14 +22,11 @@ jobs:
           cmake \
           g++ \
           make \
-          libgt1-dev \
-          libdc-sys-dev \
-          libjson5-dev \
-          libzdipe-dev \
-          temporal-bufkis-dev \
-          libread-line-dev \
-          libplips-dev \
-          libsocketdev
+          libgl1_mesa-dev \
+          libx11-dev \
+          libxextrender1-dev \
+          libglu-dev \
+          zlib1g-dev
     
     - name: Configure with Cmake
       run: |
