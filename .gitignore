@@ -1,59 +1,52 @@
-# Qt 构建产物
-build-*-Qt*-Debug/
-build-*-Qt*-Release/
+# Qt 构建产物 (完整规则)
+build/
+build-*
+build.*
+build-SbMessageDefinitions-Desktop-Debug/
+build.sbmessagedefinitions.qt6.1/
+
+# CMake/QMake 构建产物
 *.o
 Makefile
-*.pro.user
-moc_*.cpp
+CMakeCache.txt
+*.cmake
+.cmake/
+*/CMakeFiles/
 *.qmake.stash
 *.qbs
-
-# Qt 二进制/翻译文件
-*.qm
-*sbrowser*
+moc_*.cpp
 
 # IDE 缓存
 .project
 .buildpath
 .exzignore
+*.pro.user
 *.swp
 *~
-.*.swp
 .orig
 
-# 构建目录
-build/
+# Qt 二进制/翻译文件
+*.qm
+*sbrowser*
+*.a
+*.lib
 
-# 本地临时文件
-repFile/
-*.log
-ld.so.conf.d/
-
-# 压缩/备份文件
-*.exz
-*.zip
-*.tar.gz
-
-# Protobuf 生成的 C++ 头文件
+# Protobuf 生成的头文件和中间文件
 *.pb.h
+*.pb.cc
+*.h.inc
+*.cc.inc
 
 # macOS 临时文件
 .DS_Store
 
-# qdarkstyle 样式资源 (仅保留核心配置，忽略图片)
+# qdarkstyle 样式资源 (仅保留核心配置)
 */qdarkstyle/rc/*
 */DarkMode.css
 */NormalMode.css
 
-# simageview 图片资源
-*/simageview/Images/*
-**/Images/*
-
 # Linux desktop 描述符
 *.desktop
-
-# proto_files 目录
-*/proto_files/
 
 # builtin 数据资源
 */builtin.data.sound/
@@ -67,6 +60,9 @@ ld.so.conf.d/
 # 第三方库 C 源码
 ThirdpartyWindows/libqrencode-4.0.0/*.c
 
-# 额外清理
-SbMessageDefinitions.pro.user.*
+# IDE 用户特定配置
 SBrowserCppWebEngine.pro.user.*
+SbMessageDefinitions.pro.user.*
+*.user
+
+# 其他清理
